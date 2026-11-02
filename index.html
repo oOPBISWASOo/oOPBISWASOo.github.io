@@ -41,8 +41,11 @@
     border-bottom: 1px solid var(--rule);
   }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .mark { font-family: "Fraunces", serif; font-size: 1.15rem; color: var(--fg); text-decoration: none; letter-spacing: 0.01em; }
+  .mark { font-family: "Fraunces", serif; font-size: 1.15rem; color: var(--fg); letter-spacing: 0.01em; white-space: nowrap; }
+  .mark a { color: inherit; text-decoration: none; }
   .mark span { color: var(--accent); }
+  .mark .mark-mail { font-family: "Inter", system-ui, sans-serif; font-size: 0.9rem; color: var(--muted); letter-spacing: 0; margin-left: 4px; transition: color .2s; }
+  .mark .mark-mail:hover { color: var(--accent); }
   nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; }
   nav a.link { color: var(--muted); text-decoration: none; font-size: 0.92rem; transition: color .2s; }
   nav a.link:hover { color: var(--fg); }
@@ -137,7 +140,14 @@
     .portrait { max-width: 320px; }
     .wip { border-radius: 14px; }
   }
+  @media (max-width: 480px) {
+    .mark { font-size: 1.02rem; }
+    .mark .mark-mail { font-size: 0.8rem; }
+    nav ul { gap: 14px; }
+    nav a.link { font-size: 0.86rem; }
+  }
   @media (max-width: 420px) { nav ul li:nth-child(1) { display: none; } }
+  @media (max-width: 400px) { nav ul li:nth-child(2) { display: none; } }
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
     .tape { animation: none; }
@@ -150,7 +160,7 @@
 
 <nav>
   <div class="wrap">
-    <a class="mark" href="#">P<span>.</span>P<span>.</span>Biswas</a>
+    <div class="mark"><a href="#">Parik</a><span>:</span> <a class="mark-mail" href="mailto:pbiswas@camk.edu.pl">pbiswas@camk.edu.pl</a></div>
     <ul>
       <li><a class="link" href="#research">Research</a></li>
       <li><a class="link" href="#publications">Publications</a></li>
@@ -226,7 +236,8 @@
   <section id="contact" class="reveal">
     <div class="sec-head"><span class="sec-num">04</span><h2>Contact</h2></div>
     <div class="contact">
-      <div class="tool"><b>Email</b><a href="mailto:pbiswas@camk.edu.pl">pbiswas@camk.edu.pl</a></div>
+      <div class="tool"><b>Work email</b><a href="mailto:pbiswas@camk.edu.pl">pbiswas@camk.edu.pl</a></div>
+      <div class="tool"><b>Personal email</b><a href="mailto:pbiswas0505@gmail.com">pbiswas0505@gmail.com</a></div>
       <div class="tool"><b>Address</b><span>Nicolaus Copernicus Astronomical Center<br>Bartycka 18, 00-716 Warsaw, Poland</span></div>
     </div>
   </section>
